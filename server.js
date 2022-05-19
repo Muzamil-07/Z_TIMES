@@ -25,30 +25,31 @@ mongoose.connect( DB, {
 } )
     .then( () => console.log( "Database connection successfull!✨✨" ) );
 
+app.use( express.static( "client/build" ) );
+app.set( 'view engine', 'html' );
+
+
+const path=require( "path" );
+
+app.get( "*", ( req, res ) => {
+
+    res.sendFile( path.resolve( __dirname, 'client', 'build', 'index.html' ) );
+
+
+} )
+
+
 
 //Optimize:                    ************** Starting the server ***************
 
 //! Starting the server at 127.0.0.1:30001
-let port=process.env.PORT||30001
+let port=process.env.PORT
 const server=app.listen( process.env.PORT, () => {
     console.log( "Starting the server at 127.0.0.1:"+process.env.PORT );
 } );
 
 console.log( process.env.NODE_ENV=="production" );
-if ( process.env.NODE_ENV=="production" ) {
 
-    app.use( express.static( "client/build" ) );
-
-    const path=require( "path" );
-
-    app.get( "*", ( req, res ) => {
-
-        res.sendFile( path.resolve( __dirname, 'client', 'build', 'index.html' ) );
-
-    } )
-
-
-}
 
 
 //! Listener to be called when any unhandle rejected promise occurs
