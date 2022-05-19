@@ -1,0 +1,52 @@
+.mobile_app_desc {
+  width: 80%;
+  padding-top: 2rem;
+}
+
+.mobile_app_heading {
+  color: #FF7E03;
+  font-size: 4rem;
+}
+
+.mobile_app_heading2 {
+  font-size: 2rem;
+  margin-top: -1rem;
+}
+
+.mobile_app_para {
+  margin-top: 1.6rem;
+}
+
+.live_tv_btn,
+.draw_btn {
+  font-size: 2.5rem !important;
+  color: white !important;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+  background-color: #FF7E03 !important;
+  width: 80%;
+}
+.icon__1 , .icon__2{
+  display: none;
+}
+
+
+/* media query */
+@media (min-width: 300px) and (max-width: 500px) {
+  body{
+    overflow-x: hidden !important;
+  }
+  #mobile_app_sec{
+    display: none;
+  }
+  .live__tv__div{
+    margin-top: 7rem !important;
+  }
+  .results__div{
+    margin-top: 4rem !important;
+  }
+  .icon__1 , .icon__2{
+    display: block;
+  }
+
+ }
