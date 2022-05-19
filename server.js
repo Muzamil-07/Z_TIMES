@@ -31,10 +31,10 @@ mongoose.connect( DB, {
 //! Starting the server at 127.0.0.1:30001
 let port=process.env.PORT||30001
 const server=app.listen( process.env.PORT, () => {
-    // console.log( "Starting the server at 127.0.0.1:"+process.env.PORT );
+    console.log( "Starting the server at 127.0.0.1:"+process.env.PORT );
 } );
 
-
+console.log( process.env.NODE_ENV=="production" );
 if ( process.env.NODE_ENV=="production" ) {
 
     app.use( express.static( "client/build" ) );
